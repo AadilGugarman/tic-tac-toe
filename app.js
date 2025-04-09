@@ -4,7 +4,9 @@ let msgContainer = document.querySelector(".msgContainer");
 let playAgainBtn = document.querySelector(".play-again-button");
 let resetBtn = document.querySelector(".reset-button");
 
-let turnO = true;
+let playerX = prompt("Enter PlayerX Name");
+let playerO = prompt("Enter PlayerO Name");
+turnO = true;
 let winPattern = [
   [0, 1, 2],
   [0, 3, 6],
@@ -38,6 +40,11 @@ const checkWinner = () => {
     let pos3 = boxes[pattern[2]].innerText;
     if (pos1 != "" && pos2 != "" && pos3 != "") {
       if (pos1 == pos2 && pos2 == pos3) {
+        if (pos1 == "O") {
+          pos1 = playerO;
+        } else {
+          pos1 = playerX;
+        }
         showWinner(pos1);
         disableBox();
       }
@@ -66,6 +73,8 @@ const resetGame = () => {
   turnO = true;
   enableBox();
   msgContainer.classList.add("hide");
+  playerX = prompt("Enter PlayerX Name");
+  playerO = prompt("Enter PlayerO Name");
 };
 const playGame = () => {
   turnO = true;
