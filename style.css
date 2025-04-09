@@ -8,23 +8,29 @@ body {
   background-color: #9a8c98;
 }
 
-h2 {
+h2,
+h3 {
   width: 100vw;
-  height: 100px;
+  line-height: 4rem;
   text-align: center;
   color: #fff;
   font-size: 2rem;
   font-weight: 600;
-  margin-top: 20px;
-  background-color: #4a4e69;
 }
 .container {
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 20px;
   gap: 20px;
+}
+
+.hide {
+  visibility: hidden;
+}
+.msgContainer {
+  text-align: center;
 }
 
 .play-again-button,
@@ -60,6 +66,7 @@ h2 {
   border: 2px solid #000;
   border-radius: 10px;
   transition: all 0.3s ease;
+  font-size: 5rem;
 }
 
 .box:active {
